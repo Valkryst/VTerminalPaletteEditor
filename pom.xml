@@ -8,7 +8,7 @@
     <artifactId>VTerminalPaletteEditor</artifactId>
     <version>2021.01.02</version>
     <packaging>jar</packaging>
-    <name>VTerminalPaletteEditor</name>
+    <name>${project.artifactId}</name>
 
     <properties>
         <maven.compiler.release>11</maven.compiler.release>
@@ -34,7 +34,7 @@
 
     <build>
         <plugins>
-            <!-- Used to include all of the dependencies in the packaged Jar file -->
+            <!-- Used to include all the dependencies in the packaged Jar file -->
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.3.0</version>
@@ -63,6 +63,13 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <!-- Runs tests during build. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.2</version>
             </plugin>
         </plugins>
     </build>
